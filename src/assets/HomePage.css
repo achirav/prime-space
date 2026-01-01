@@ -1,0 +1,162 @@
+.editorial-home {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #f1f5f9;
+  color: #1f2933;
+}
+
+/* Hero  Statement */
+.statement {
+  max-width: 900px;
+  margin: 140px auto 100px;
+  padding: 0 20px;
+}
+
+.statement h1 {
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.statement h1 span {
+  color: #3b82f6; /* highlight */
+}
+
+.statement p {
+  margin-top: 24px;
+  max-width: 520px;
+  color: #475569;
+  line-height: 1.9;
+}
+
+.statement-link {
+  display: inline-block;
+  margin-top: 40px;
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Full-width image section */
+.image-break img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+/* Story section with stats */
+.story {
+  max-width: 1100px;
+  margin: 120px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+}
+
+.story-text h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.story-text p {
+  color: #475569;
+  line-height: 1.9;
+}
+
+.story-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.story-stats div strong {
+  font-size: 36px;
+  color: #3b82f6;
+}
+
+.story-stats div span {
+  display: block;
+  color: #475569;
+}
+
+/* Horizontal gallery */
+.horizontal-gallery {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 40px 20px 80px;
+
+}
+
+.horizontal-gallery img {
+  height: 260px;
+  min-width: 360px;
+  object-fit: cover;
+  border-radius: 16px;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Values  Features section */
+.values {
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.value {
+  text-align: left;
+}
+
+.value svg {
+  color: #3b82f6;
+  margin-bottom: 16px;
+}
+
+.value h3 {
+  margin-bottom: 10px;
+}
+
+.value p {
+  color: #475569;
+}
+
+
+.closing-cta {
+  background: #1f2933;
+  color: #ffffff;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.closing-cta h2 {
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 16px 36px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .statement h1 {
+    font-size: 36px;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+  }
+
+  .values {
+    grid-template-columns: 1fr;
+  }
+}
