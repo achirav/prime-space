@@ -1,19 +1,30 @@
-import React from 'react';
-import { X } from 'lucide-react';
-import './DemoWarning.css';
+import React from "react";
+import { Info } from "lucide-react";
+import "./DemoWarning.css";
 
 const DemoWarning = ({ onClose }) => {
   return (
-    <div className="demo-warning-modal">
-      <div className="warning-content">
-        <h3>Demo Notice</h3>
-        <p>This is a demonstration website. All properties are fictional.</p>
-        <button 
-          className="warning-confirm-btn"
+    <div className="demo-overlay" role="dialog" aria-modal="true">
+      <div className="demo-card">
+        <div className="demo-icon">
+          <Info size={22} />
+        </div>
+
+        <h3 className="demo-title"> Note</h3>
+
+        <p className="demo-text">
+          This website is created for demonstration and academic purposes.
+          All properties, prices, and images shown are fictional and do not
+          represent real listings.
+        </p>
+
+        {/*Button*/}
+        <button
+          className="demo-btn"
           onClick={onClose}
-          aria-label="Close warning"
+          aria-label="Dismiss demo notice"
         >
-          I Understand
+          continue
         </button>
       </div>
     </div>
