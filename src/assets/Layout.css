@@ -1,0 +1,121 @@
+/* Main wrapper */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f8fa;
+  color: #1f2933;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+
+/* Main content area */
+.page-content {
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* FOOTER */
+.site-footer {
+  background-color: #0f172a; 
+  color: #e5e7eb;
+  margin-top: 4rem;
+}
+
+/* Grid layout */
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+
+/* Brand name and short description styling */
+.footer-brand h3 {
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  max-width: 420px;
+}
+
+/* footer links */
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Contact details inside the footer */
+.footer-contact p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.footer-bottom span {
+  font-style: italic;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .page-content {
+    padding: 2rem 1.2rem;
+  }
+}
