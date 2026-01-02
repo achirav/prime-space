@@ -3,7 +3,7 @@
         {
             "id": "prop1",
             "type": "House",
-            "bedrooms": 3,
+            "bedrooms": 4,
             "bathrooms": 5,
             "area": 7.6,
             "price": 750000,
