@@ -9,6 +9,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="search" element={<SearchPage />} />
+        <Route path="property/:id" element={<PropertyDetails />} />
       </Route>
     </Routes>
   );
