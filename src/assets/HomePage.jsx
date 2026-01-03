@@ -31,7 +31,7 @@ function HomePage() {
 
             {/* FULL WIDTH IMAGE BREAK */}
             <section className="image-break">
-                <img src="/main.jpg" alt="Luxury living" />
+                <img src="/pics/main.webp" alt="Luxury living" />
             </section>
 
 
@@ -66,11 +66,11 @@ function HomePage() {
 
             {/* Horizontal scroll bar gallery of property images */}
             <section className="horizontal-gallery">
-                {Array.from({ length: 8 }).map((_, i) => (
+                {Array.from({ length: 7 }).map((_, i) => (
                     <img
                         key={i}
-                        src={`/${i + 1}.jpg`}
-                        alt="Property view"
+                        src={`/Property 1/pic-${i + 1}.webp`} 
+                        alt={`Property view ${i + 1}`}
                         loading="lazy"
                         decoding="async"
                     />
