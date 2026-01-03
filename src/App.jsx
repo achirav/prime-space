@@ -4,7 +4,7 @@ import Layout from "./assets/Layout";
 import SearchPage from "./assets/SearchPage";
 import PropertyDetails from "./assets/PropertyDetails";
 import ContactAgent from "./assets/ContactAgent";
-
+import About from "./assets/About";
 
 
 
@@ -16,7 +16,7 @@ function App() {
         <Route path="search" element={<SearchPage />} />
         <Route path="property/:id" element={<PropertyDetails />} />
         <Route path="contact" element={<ContactAgent />} />
-        
+        <Route path="about" element={<About />} />
       </Route>
     </Routes>
   );
