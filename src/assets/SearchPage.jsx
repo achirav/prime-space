@@ -18,6 +18,9 @@ const SearchPage = () => {
   /* All properties loaded from JSON */
   const [properties, setProperties] = useState([]);
 
+  const [isOverFavourites, setIsOverFavourites] = useState(false);
+
+
   /* Properties after applying filters */
   const [filteredProperties, setFilteredProperties] = useState([]);
 
@@ -73,7 +76,7 @@ const SearchPage = () => {
       const matchesAddedMonth =
         !filters.addedMonth ||
         property.added.month.toLowerCase() ===
-          filters.addedMonth.toLowerCase();
+        filters.addedMonth.toLowerCase();
 
       const matchesAddedYear =
         !filters.addedYear ||
@@ -209,8 +212,13 @@ const SearchPage = () => {
       <div
         className="favourites"
         onDrop={handleDrop}
-        onDragOver={handleDragOver}
+        onDragOver={e => {
+          e.preventDefault();
+          setIsOverFavourites(true);
+        }}
+        onDragLeave={() => setIsOverFavourites(false)}
       >
+
         <h2>Favourites</h2>
 
         <button
@@ -223,7 +231,19 @@ const SearchPage = () => {
 
         <div className="favourites-list">
           {favourites.map(fav => (
-            <div className="fav-card" key={fav.id}>
+            <div
+              className="fav-card"
+              key={fav.id}
+              draggable
+              onDragStart={e =>
+                e.dataTransfer.setData("removeId", fav.id)
+              }
+              onDragEnd={() => {
+                if (!isOverFavourites) {
+                  removeFavourite(fav.id);
+                }
+              }}
+            >
               <img src={fav.picture} alt="Property" />
               <div className="fav-info">
                 <p>£{fav.price.toLocaleString()}</p>
@@ -291,11 +311,10 @@ const SearchPage = () => {
 
               <div className="card-actions">
                 <button
-                  className={`heart-btn ${
-                    favourites.some(f => f.id === property.id)
-                      ? "active"
-                      : ""
-                  }`}
+                  className={`heart-btn ${favourites.some(f => f.id === property.id)
+                    ? "active"
+                    : ""
+                    }`}
                   onClick={() => addToFavourites(property)}
                   aria-label="Add to favourites"
                 >
