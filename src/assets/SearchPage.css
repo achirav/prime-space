@@ -28,6 +28,12 @@
   border-radius: 18px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.06);
   margin-bottom: 50px;
+  align-items: end;
+}
+
+.filters label {
+  position: absolute;
+  left: -9999px;
 }
 
 .filters input,
