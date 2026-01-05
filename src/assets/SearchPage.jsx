@@ -18,6 +18,7 @@ const SearchPage = () => {
   /* All properties loaded from JSON */
   const [properties, setProperties] = useState([]);
 
+  // Remove a favourite when dragging it out
   const [isOverFavourites, setIsOverFavourites] = useState(false);
 
 
@@ -57,7 +58,7 @@ const SearchPage = () => {
     const filtered = properties.filter(property => {
       const matchesType =
         filters.propertyType === "Any" ||
-        property.type.toLowerCase() === filters.propertyType.toLowerCase();
+        property.type?.toLowerCase() === filters.propertyType.toLowerCase();
 
       const matchesMinPrice =
         !filters.minPrice || property.price >= parseInt(filters.minPrice);
@@ -75,12 +76,12 @@ const SearchPage = () => {
 
       const matchesAddedMonth =
         !filters.addedMonth ||
-        property.added.month.toLowerCase() ===
+        property.added?.month?.toLowerCase() ===
         filters.addedMonth.toLowerCase();
 
       const matchesAddedYear =
         !filters.addedYear ||
-        property.added.year.toString() === filters.addedYear;
+        property.added?.year?.toString() === filters.addedYear;
 
       const matchesLocation =
         !filters.location ||
@@ -139,7 +140,10 @@ const SearchPage = () => {
 
       {/* Filter form for searching properties */}
       <form className="filters" onSubmit={handleSearch}>
+
+        <label htmlFor="propertyType">Property Type</label>
         <select
+          id="propertyType"
           name="propertyType"
           value={filters.propertyType}
           onChange={handleInputChange}
@@ -148,6 +152,7 @@ const SearchPage = () => {
           <option value="House">House</option>
           <option value="Flat">Flat</option>
         </select>
+
 
         <input
           type="number"
@@ -296,9 +301,9 @@ const SearchPage = () => {
               <div className="card-image">
                 <img src={property.picture} alt="Property" />
                 <div className="card-badges">
-                  <span>🛏 {property.bedrooms}</span>
+                  <span>🛏 {property.bedrooms} Bedrooms</span>
                   <span>🛁 {property.bathrooms}</span>
-                  <span>📐 {property.area}p</span>
+                  <span>📐 {property.area}sqft</span>
                 </div>
               </div>
 
