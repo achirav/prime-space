@@ -154,7 +154,9 @@ const SearchPage = () => {
         </select>
 
 
+        <label htmlFor="minPrice">Min Price</label>
         <input
+          id="minPrice"
           type="number"
           placeholder="Min Price"
           name="minPrice"
@@ -162,13 +164,16 @@ const SearchPage = () => {
           onChange={handleInputChange}
         />
 
+        <label htmlFor="maxPrice">Max Price</label>
         <input
+          id="maxPrice"
           type="number"
           placeholder="Max Price"
           name="maxPrice"
           value={filters.maxPrice}
           onChange={handleInputChange}
         />
+
 
         <input
           type="number"
@@ -301,7 +306,7 @@ const SearchPage = () => {
               <div className="card-image">
                 <img src={property.picture} alt="Property" />
                 <div className="card-badges">
-                  <span>🛏 {property.bedrooms} Bedrooms</span>
+                  <span>🛏 {property.bedrooms}Bedroom</span>
                   <span>🛁 {property.bathrooms}</span>
                   <span>📐 {property.area}sqft</span>
                 </div>
