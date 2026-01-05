@@ -23,6 +23,7 @@ function Navbar() {
             <Link to="/search">Search</Link>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact Us</Link>
+            <Link to="/favourites">Favourites</Link>
           </div>
 
           

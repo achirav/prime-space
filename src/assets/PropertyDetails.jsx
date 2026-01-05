@@ -16,15 +16,31 @@ function PropertyDetails() {
             .then(res => res.json())
             .then(data => {
                 const found = data.properties.find(p => p.id === id);
+                if (!found) {
+                    navigate("/search");
+                    return;
+                }
                 setProperty(found);
                 setImageIndex(0); // Reset image carousel
             });
     }, [id]);
 
     // Show loading until property data is fetched
-    if (!property) {
-        return <div className="loading">Loading properties…</div>;
-    }
+    return (
+        <section className="property-view">
+            <h2>Property Details</h2>
+
+            {!property ? (
+                <div className="loading">Loading properties…</div>
+            ) : (
+                <>
+                    {/* existing property UI here */}
+                </>
+            )}
+        </section>
+    );
+
+
 
     // Prepare all available images for the gallery
     const images = [
